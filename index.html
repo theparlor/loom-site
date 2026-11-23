@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>Loom — every session orients instead of re-briefing</title>
-<meta name="description" content="Loom is the cross-session awareness substrate. Every agent, cron, and sidecar reads and writes to a shared coherence surface — so the next session inherits what the last one knew, not a blank slate.">
+<title>Loom: every session orients instead of re-briefing</title>
+<meta name="description" content="Loom is the cross-session awareness substrate. Every agent, cron, and sidecar reads and writes to a shared coherence surface, so the next session inherits what the last one knew, not a blank slate.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,800;0,900;1,500;1,700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -76,7 +76,7 @@
   .ch.assert .t{color:var(--steel-light)} .ch.dissent .t{color:var(--ember)}
   .ch p{font-size:14px;color:var(--bone-dim);line-height:1.55;font-weight:300}
 
-  /* veil — warm cools to system plane */
+  /* veil: warm cools to system plane */
   .veil-section{border-top:1px solid var(--line);background:linear-gradient(180deg, var(--ground) 0%, #141821 100%)}
   .veil-section .kicker{color:var(--steel-light)}
   .veil-line{margin:24px 0;height:2px;background:linear-gradient(90deg,var(--molten) 0%, var(--brass) 30%, var(--steel) 70%, var(--steel-deep) 100%);border-radius:2px}
@@ -97,35 +97,35 @@
 </head>
 <body>
 
-<div class="ptbanner"><b>v0 · pressure-test</b> &nbsp;·&nbsp; not public, not indexed &nbsp;·&nbsp; built, used, still being challenged</div>
+<div class="ptbanner"><b>v0 · pressure-test</b> &nbsp;·&nbsp; unlisted: public page, search engines asked to stay away &nbsp;·&nbsp; still being challenged</div>
 
 <nav class="top"><div class="wrap">
   <span class="brand"><span class="mark">&#9874;</span> The Parlor <span class="sep">/</span> <span class="pname">Loom</span></span>
   <span class="spacer"></span>
-  <a class="nl" href="https://theparlor.github.io/portfolio-site/">&larr; All products</a>
-  <a class="veil" href="#veil">Behind the veil &rarr;</a>
+  <a class="nl" href="https://theparlor.github.io/portfolio-site/">All products</a>
+  <a class="veil" href="#veil">Behind the veil</a>
 </div></nav>
 
 <header class="hero"><div class="wrap">
   <div class="eyebrow">Awareness &amp; record</div>
   <h1 class="title">Every session <em>orients</em> instead of re-briefing.</h1>
-  <p class="lede">Loom is the cross-session awareness substrate. Every agent, sidecar, and cron job reads and writes to a <strong>shared coherence surface</strong> &mdash; so the next session inherits what the last one knew, not a blank slate. SQLite-WAL backed. Seven verbs. No lock contention by construction.</p>
+  <p class="lede">Loom is the cross-session awareness substrate. Every agent, sidecar, and cron job reads and writes to a <strong>shared coherence surface</strong>, so the next session inherits what the last one knew, not a blank slate. SQLite-WAL backed. Seven verbs. No lock contention by construction.</p>
   <div class="forge-rule"></div>
 </div></header>
 
 <section><div class="wrap">
   <div class="kicker">The problem it solves</div>
   <h2>Every session runs blind to its siblings. That's the blindspot Loom closes.</h2>
-  <p class="body">A sidecar kicks off research another sidecar answered twenty minutes ago. A cron job writes a signal no running session will see for hours. A fresh Main has no way to ask "what are my siblings doing right now?" The coherence layer holds long-term artifact state, but had no primitive for <strong>live cross-session awareness</strong> &mdash; what's alive, what just sealed, what's parked waiting on an answer. Loom is that primitive. When it works, sidecars deduplicate silently. Deferred questions become a queue, not a halt. Sessions cite each other.</p>
-  <div class="pull">The dedup happened. The ledger proved it. A sidecar avoided re-running work another session had already written &mdash; not because it was told to, but because Loom gave it the priming to see.</div>
+  <p class="body">A sidecar kicks off research another sidecar answered twenty minutes ago. A cron job writes a signal no running session will see for hours. A fresh Main has no way to ask "what are my siblings doing right now?" The coherence layer holds long-term artifact state, but had no primitive for <strong>live cross-session awareness</strong>: what's alive, what just sealed, what's parked waiting on an answer. Loom is that primitive. When it works, sidecars deduplicate silently. Deferred questions become a queue, not a halt. Sessions cite each other.</p>
+  <div class="pull">The dedup happened. The ledger proved it. A sidecar avoided re-running work another session had already written, not because it was told to, but because Loom gave it the priming to see.</div>
 </div></section>
 
 <section><div class="wrap">
   <div class="kicker">How you use it</div>
   <h2>Seven verbs. One shared surface. Every session class welcome.</h2>
   <div class="steps">
-    <div class="step"><div class="n">1</div><h3>Register &amp; orient</h3><p>A session announces itself and receives a starter projection of live siblings &mdash; scored by engagement, product, and working-directory overlap. Arrive knowing what's already in motion.</p></div>
-    <div class="step"><div class="n">2</div><h3>Write &amp; heartbeat</h3><p>Append decisions, signals, questions, and results to your own thread. Mark yourself alive every 30 seconds. Park a blocking question and carry on &mdash; it surfaces in the next Main's priming context automatically.</p></div>
+    <div class="step"><div class="n">1</div><h3>Register &amp; orient</h3><p>A session announces itself and receives a starter projection of live siblings, scored by engagement, product, and working-directory overlap. Arrive knowing what's already in motion.</p></div>
+    <div class="step"><div class="n">2</div><h3>Write &amp; heartbeat</h3><p>Append decisions, signals, questions, and results to your own thread. Mark yourself alive every 30 seconds. Park a blocking question and carry on. It surfaces in the next Main's priming context automatically.</p></div>
     <div class="step"><div class="n">3</div><h3>Seal &amp; hand off</h3><p>When work is done, write a final selvedge record. Topography reads the last N selvedges at its COMPACT seam and produces one durable handoff. Live state transitions to compressed state without manual transfer.</p></div>
   </div>
 </div></section>
@@ -136,10 +136,10 @@
   <div class="law">
     <div class="role">The rule the whole product is built around</div>
     <h3>Lock contention disappears by construction.</h3>
-    <p>Most shared-state systems fight over writes. Loom avoids the fight by design: <strong>every session writes only to its own thread</strong>. Cross-thread writes are rejected at the API surface &mdash; not by a runtime guard that could be bypassed, but by the port contract itself. The result is two reading modes that are never confused:</p>
+    <p>Most shared-state systems fight over writes. Loom avoids the fight by design: <strong>every session writes only to its own thread</strong>. Cross-thread writes are rejected at the API surface, not by a runtime guard that could be bypassed, but by the port contract itself. The result is two reading modes that are never confused:</p>
     <div class="two-ch">
-      <div class="ch assert"><div class="t">Live siblings</div><p>Currently-active sessions with thread heads &mdash; ranked, filtered, and ready for priming context at session start.</p></div>
-      <div class="ch dissent"><div class="t">Sealed selvedges</div><p>Final records from sessions that just closed &mdash; the trailing warp that Topography compresses into durable handoffs.</p></div>
+      <div class="ch assert"><div class="t">Live siblings</div><p>Currently-active sessions with thread heads: ranked, filtered, and ready for priming context at session start.</p></div>
+      <div class="ch dissent"><div class="t">Sealed selvedges</div><p>Final records from sessions that just closed: the trailing warp that Topography compresses into durable handoffs.</p></div>
     </div>
   </div>
 </div></section>
@@ -154,11 +154,11 @@
 <div class="wrap">
   <div class="kicker">How it comes to be &middot; where it lives</div>
   <h2>Two views of the machine.</h2>
-  <p class="body">The first diagram traces how a single Loom run unfolds &mdash; from a session registering through its heartbeat-and-write lifecycle to the COMPACT seal that hands off to Topography. The second shows where Loom sits in the portfolio: which products it reads, what it produces, and the Intent governance loop drawn behind a faint veil line.</p>
+  <p class="body">The first diagram traces how a single Loom run unfolds, from a session registering through its heartbeat-and-write lifecycle to the COMPACT seal that hands off to Topography. The second shows where Loom sits in the portfolio: which products it reads, what it produces, and the Intent governance loop drawn behind a faint veil line.</p>
 
   <div class="diag-pair">
 
-    <!-- DIAGRAM 1: FLOW — How it comes to be -->
+    <!-- DIAGRAM 1: FLOW: How it comes to be -->
     <div class="diag-block">
       <div class="diag-label">How it comes to be</div>
       <svg viewBox="0 0 480 310" width="100%" height="auto" style="max-width:480px;display:block" xmlns="http://www.w3.org/2000/svg" aria-label="Flow diagram: how a Loom session lifecycle works">
@@ -179,7 +179,7 @@
         </defs>
 
         <!-- Stage label row -->
-        <text x="240" y="18" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F" font-style="italic">session lifecycle: register &rarr; heartbeat &rarr; write &rarr; seal &rarr; handoff</text>
+        <text x="240" y="18" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F" font-style="italic">session lifecycle: register to heartbeat to write to seal to handoff</text>
 
         <!-- Node 1: Register -->
         <rect x="8" y="104" width="68" height="40" rx="7" fill="#2b2219" stroke="#C9A45C" stroke-width="1.2"/>
@@ -188,7 +188,7 @@
         <!-- starter projection label -->
         <text x="42" y="154" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#9A7F4E" font-style="italic">+projection</text>
 
-        <!-- Arrow 1→2 -->
+        <!-- Arrow 1 to 2 -->
         <line x1="76" y1="124" x2="94" y2="124" stroke="#C9A45C" stroke-width="1.4" marker-end="url(#larr)"/>
 
         <!-- Node 2: Heartbeat loop -->
@@ -199,7 +199,7 @@
         <path d="M164,144 Q196,162 96,144" fill="none" stroke="#E8772B" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="3,3" marker-end="url(#larr-molten)"/>
         <text x="130" y="168" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7" fill="#85795F" font-style="italic">marks alive</text>
 
-        <!-- Arrow 2→3 -->
+        <!-- Arrow 2 to 3 -->
         <line x1="164" y1="124" x2="182" y2="124" stroke="#C9A45C" stroke-width="1.4" marker-end="url(#larr)"/>
 
         <!-- Node 3: Write thread (stacked records) -->
@@ -214,7 +214,7 @@
 
         <text x="221" y="80" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#9A7F4E" font-style="italic">own thread only</text>
 
-        <!-- Arrow 3→4 -->
+        <!-- Arrow 3 to 4 -->
         <line x1="258" y1="124" x2="278" y2="124" stroke="#C9A45C" stroke-width="1.4" marker-end="url(#larr)"/>
 
         <!-- Node 4: COMPACT seal -->
@@ -225,7 +225,7 @@
         <rect x="286" y="152" width="66" height="14" rx="4" fill="rgba(201,164,92,0.12)" stroke="#9A7F4E" stroke-width="0.8"/>
         <text x="319" y="162" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#C9A45C">selvedge record</text>
 
-        <!-- Arrow 4→5 -->
+        <!-- Arrow 4 to 5 -->
         <line x1="358" y1="124" x2="376" y2="124" stroke="#C9A45C" stroke-width="1.4" marker-end="url(#larr)"/>
 
         <!-- Node 5: Topography orients -->
@@ -233,21 +233,21 @@
         <text x="423" y="119" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9" fill="#AAB4C0">Topography</text>
         <text x="423" y="131" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#7E8A98">orients next</text>
 
-        <!-- Siblings read panel — below the main flow -->
+        <!-- Siblings read panel: below the main flow -->
         <rect x="8" y="196" width="360" height="50" rx="8" fill="#17120e" stroke="#3a2f23" stroke-width="1" stroke-dasharray="4,3"/>
         <text x="188" y="212" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#85795F" font-style="italic">siblings read live view in parallel</text>
-        <text x="188" y="228" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">register &rarr; live() / siblings() &rarr; filtered projection by scope</text>
+        <text x="188" y="228" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">register to live() / siblings() to filtered projection by scope</text>
 
         <!-- dashed line from main nodes down to siblings panel -->
         <line x1="42" y1="144" x2="42" y2="196" stroke="#3a2f23" stroke-width="0.8" stroke-dasharray="3,3"/>
         <line x1="130" y1="180" x2="130" y2="196" stroke="#3a2f23" stroke-width="0.8" stroke-dasharray="3,3"/>
 
         <!-- Bottom label -->
-        <text x="240" y="296" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">Register &rarr; Heartbeat &rarr; Write (own thread) &rarr; COMPACT seal &rarr; Topography orients</text>
+        <text x="240" y="296" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">Register to Heartbeat to Write (own thread) to COMPACT seal to Topography orients</text>
       </svg>
     </div>
 
-    <!-- DIAGRAM 2: ARCHITECTURE — Where it lives -->
+    <!-- DIAGRAM 2: ARCHITECTURE: Where it lives -->
     <div class="diag-block">
       <div class="diag-label">Where it lives</div>
       <svg viewBox="0 0 480 310" width="100%" height="auto" style="max-width:480px;display:block" xmlns="http://www.w3.org/2000/svg" aria-label="Architecture diagram: Loom position in the portfolio">
@@ -271,11 +271,11 @@
           </marker>
         </defs>
 
-        <!-- Intent loop veil — faint background rectangle -->
+        <!-- Intent loop veil: faint background rectangle -->
         <rect x="10" y="14" width="460" height="254" rx="12" fill="none" stroke="#3a2f23" stroke-width="1.5" stroke-dasharray="5,4"/>
-        <text x="26" y="28" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#3a2f23" font-style="italic">Intent loop — Notice &middot; Spec &middot; Execute &middot; Observe</text>
+        <text x="26" y="28" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#3a2f23" font-style="italic">Intent loop: Notice &middot; Spec &middot; Execute &middot; Observe</text>
 
-        <!-- Sessions block — left, three stacked session nodes -->
+        <!-- Sessions block: left, three stacked session nodes -->
         <rect x="22" y="78" width="88" height="138" rx="10" fill="#211a13" stroke="#3a2f23" stroke-width="1"/>
         <text x="66" y="96" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8.5" fill="#85795F" font-style="italic">sessions</text>
         <rect x="32" y="102" width="68" height="26" rx="6" fill="#2b2219" stroke="#C9A45C" stroke-width="1"/>
@@ -285,11 +285,11 @@
         <rect x="32" y="162" width="68" height="26" rx="6" fill="#2b2219" stroke="#5B6573" stroke-width="1"/>
         <text x="66" y="179" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#7E8A98">cron</text>
 
-        <!-- Arrow: Sessions → Loom -->
+        <!-- Arrow: Sessions to Loom -->
         <line x1="110" y1="147" x2="152" y2="147" stroke="#C9A45C" stroke-width="1.4" marker-end="url(#laarr)"/>
         <text x="131" y="140" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7.5" fill="#9A7F4E" font-style="italic">register/write</text>
 
-        <!-- Loom box — centre -->
+        <!-- Loom box: centre -->
         <rect x="154" y="78" width="130" height="138" rx="10" fill="url(#la-loom)" stroke="#E8772B" stroke-width="1.8"/>
         <text x="219" y="108" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="15" font-weight="800" fill="#ECE3D4">Loom</text>
         <text x="219" y="122" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="9" fill="#B3A890">Awareness</text>
@@ -304,12 +304,12 @@
         <rect x="174" y="199" width="90" height="13" rx="4" fill="rgba(232,119,43,0.10)" stroke="#9A7F4E" stroke-width="0.8"/>
         <text x="219" y="209" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7" fill="#C9A45C">writer-scoped threads</text>
 
-        <!-- Arrow: Loom → Topography (COMPACT seam) -->
+        <!-- Arrow: Loom to Topography (COMPACT seam) -->
         <line x1="284" y1="147" x2="324" y2="147" stroke="#E8772B" stroke-width="1.6" marker-end="url(#laarr-out)"/>
         <text x="304" y="139" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7" fill="#9A7F4E" font-style="italic">selvedge</text>
         <text x="304" y="158" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="7" fill="#9A7F4E" font-style="italic">COMPACT</text>
 
-        <!-- Topography box — right -->
+        <!-- Topography box: right -->
         <rect x="326" y="90" width="104" height="114" rx="10" fill="url(#la-topo)" stroke="#C9A45C" stroke-width="1.3"/>
         <text x="378" y="116" text-anchor="middle" font-family="'Playfair Display',Georgia,serif" font-size="13" font-weight="700" fill="#C9A45C">Topography</text>
         <line x1="338" y1="124" x2="418" y2="124" stroke="#3a2f23" stroke-width="0.8"/>
@@ -329,7 +329,7 @@
         <path d="M460,40 Q470,149 460,258" fill="none" stroke="#3a2f23" stroke-width="1" stroke-dasharray="4,5" marker-end="url(#laarr)"/>
 
         <!-- Bottom label -->
-        <text x="237" y="296" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">Sessions (all classes) &rarr; Loom (Awareness) &rarr; Topography (Planning) &nbsp;&middot;&nbsp; sibling by WS-DDR-025</text>
+        <text x="237" y="296" text-anchor="middle" font-family="Spectral,Georgia,serif" font-size="8" fill="#85795F">Sessions (all classes) to Loom (Awareness) to Topography (Planning) &nbsp;&middot;&nbsp; sibling by WS-DDR-025</text>
       </svg>
     </div>
 
@@ -339,27 +339,27 @@
 <section id="veil" class="veil-section"><div class="wrap">
   <div class="kicker">Behind the veil</div>
   <h2>How Loom was forged.</h2>
-  <p class="body">Loom wasn't designed in a slide deck. It was built &mdash; and is still governed &mdash; by the same machinery that produced every product in this portfolio. Slip behind the veil to see the operating model that forged it and the system it composes into.</p>
+  <p class="body">Loom wasn't designed in a slide deck. It was built, and is still governed, by the same machinery that produced every product in this portfolio. Slip behind the veil to see the operating model that forged it and the system it composes into.</p>
   <div class="veil-line"></div>
   <div class="veil-grid">
     <div class="veil-card">
       <div class="role">The operating model</div>
       <h3>Intent</h3>
-      <p>Loom carries its own <code>.intent/</code> governance &mdash; signals, specs, decisions, traced in git. The writer-scoped thread contract is a ratified spec; the port enforces it. The six emergent behaviors Loom enables were each observed and recorded before a line of substrate was written.</p>
-      <a class="enter" href="https://theparlor.github.io/intent-site/">See the operating model &rarr;</a>
+      <p>Loom carries its own <code>.intent/</code> governance: signals, specs, decisions, traced in git. The writer-scoped thread contract is a ratified spec; the port enforces it. The six emergent behaviors Loom enables were each observed and recorded before a line of substrate was written.</p>
+      <a class="enter" href="https://theparlor.github.io/intent-site/">See the operating model</a>
     </div>
     <div class="veil-card">
       <div class="role">The overhead view</div>
       <h3>Parallax</h3>
-      <p>Loom occupies the <em>Awareness</em> position in a larger coherence stack &mdash; it gives every session the situational context to avoid duplicating, to defer cleanly, and to hand off without ceremony. See where it sits among the other implements.</p>
-      <a class="enter" href="https://theparlor.github.io/parallax-site/">See the overhead view &rarr;</a>
+      <p>Loom occupies the <em>Awareness</em> position in a larger coherence stack. It gives every session the situational context to avoid duplicating, to defer cleanly, and to hand off without ceremony. See where it sits among the other implements.</p>
+      <a class="enter" href="https://theparlor.github.io/parallax-site/">See the overhead view</a>
     </div>
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  <div><span class="mark" style="color:var(--brass)">&#9874;</span> The Parlor / Loom &mdash; <strong style="color:var(--steel-light)">v0, forged in the open</strong>. <a href="https://theparlor.github.io/portfolio-site/" style="color:var(--steel-light)">&larr; All products</a></div>
-  <div class="prov">Rendered in the Foundry type system (product plane). Source &amp; governance: <code style="color:var(--steel-deep)">Core/products/loom/</code> (behind the veil). noindex &middot; not public &middot; built to be challenged.</div>
+  <div><span class="mark" style="color:var(--brass)">&#9874;</span> The Parlor / Loom: <strong style="color:var(--steel-light)">v0, forged in the open</strong>. <a href="https://theparlor.github.io/portfolio-site/" style="color:var(--steel-light)">All products</a></div>
+  <div class="prov">Rendered in the Foundry type system (product plane). Source &amp; governance: <code style="color:var(--steel-deep)">Core/products/loom/</code> (behind the veil). Unlisted, not private &middot; built to be challenged.</div>
 </div></footer>
 
 </body>
